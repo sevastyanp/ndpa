@@ -1,0 +1,93 @@
+# ---------- Gradle ----------
+.gradle/
+**/build/
+!src/**/build/
+# Wrapper jar должен коммититься (защита от глобального игнора *.jar)
+!gradle/wrapper/gradle-wrapper.jar
+
+# ---------- Kotlin / KMP ----------
+.kotlin/
+*.hprof
+
+# ---------- Android ----------
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ---------- Секреты и подпись — НИКОГДА не коммитить ----------
+*.jks
+*.keystore
+*.p12
+keystore.properties
+signing.properties
+google-services.json
+.env
+.env.*
+
+# ---------- IDE: IntelliJ / Android Studio / Fleet ----------
+.idea/
+*.iml
+.fleet/
+
+# ---------- Xcode / iOS ----------
+xcuserdata/
+**/xcshareddata/WorkspaceSettings.xcsettings
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+Pods/
+*.xcuserstate
+
+# ---------- AI-агенты: локальные настройки/сессии/кэш (не для истории) ----------
+# Личные инструкции для AI-агентов (не для истории репозитория)
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+# Claude Code
+.claude/
+# OpenAI Codex CLI
+.codex/
+# Cursor
+.cursor/
+.cursorrules
+# Windsurf (Codeium)
+.windsurf/
+# Continue.dev
+.continue/
+# Aider — история чата, кэши, локальный конфиг
+.aider*
+# Gemini CLI
+.gemini/
+# Cline / Roo Code
+.cline/
+.roo/
+# Serena и прочие MCP-памяти
+.serena/
+# OpenCode
+.opencode/
+# JetBrains Junie
+.junie/
+
+# ---------- Локальные заметки по решениям — намеренно вне репозитория ----------
+/docs/
+
+# ---------- macOS ----------
+.DS_Store
+
+# ---------- Node (на случай web/JS target) ----------
+node_modules/
+
+# ---------- Временные файлы ----------
+tmp/
+temp/
+*.tmp
+*.log
+*.swp
+*~
