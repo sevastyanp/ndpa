@@ -31,4 +31,9 @@ dependencyResolutionManagement {
 }
 
 include(":androidApp")
-include(":shared")
+include(":core:design")
+include(":core:strings")
+include(":core:ui")
+include(":composition-root")
+include(":shared:logic")
+include(":shared:ui")

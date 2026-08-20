@@ -27,7 +27,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.shared)
+    implementation(projects.compositionRoot)
 
     implementation(libs.androidx.activity.compose)
 }
