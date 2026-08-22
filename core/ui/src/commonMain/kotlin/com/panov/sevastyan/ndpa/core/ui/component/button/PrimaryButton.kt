@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,11 +37,13 @@ fun PrimaryButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
 ) {
-    val colors = PrimaryButtonDefaults.colors()
+    val sizes = PrimaryButtonDefaults.sizes
+    val shapes = PrimaryButtonDefaults.shapes
+    val colors = PrimaryButtonDefaults.colors
 
     Box(
         modifier = modifier
-            .heightIn(min = PrimaryButtonDefaults.MinHeight)
+            .heightIn(min = sizes.minHeight)
             .clickable(
                 interactionSource = null,
                 indication = PressedIndication,
@@ -48,25 +52,22 @@ fun PrimaryButton(
                 onClick = onClick,
             )
             .border(
-                width = PrimaryButtonDefaults.BorderWidth,
+                width = sizes.borderWidth,
                 color = colors.border(enabled),
-                shape = PrimaryButtonDefaults.shape,
+                shape = shapes.container,
             ),
         contentAlignment = Alignment.Center,
     ) {
         Box(
             modifier = Modifier
                 .matchParentSize()
-                .padding(PrimaryButtonDefaults.CoreInset)
-                .background(colors.core(enabled), PrimaryButtonDefaults.CoreShape),
+                .padding(sizes.coreInset)
+                .background(colors.core(enabled), shapes.core),
         )
         Text(
             text = text,
-            modifier = Modifier.padding(
-                horizontal = NdpaTheme.spacing.x2l,
-                vertical = NdpaTheme.spacing.sm,
-            ),
-            style = NdpaTheme.typography.button,
+            modifier = Modifier.padding(PrimaryButtonDefaults.contentPadding),
+            style = PrimaryButtonDefaults.textStyle,
             color = colors.content(enabled),
             textAlign = TextAlign.Center,
             maxLines = 2,
@@ -74,6 +75,65 @@ fun PrimaryButton(
         )
     }
 }
+
+internal object PrimaryButtonDefaults {
+
+    val sizes: PrimaryButtonSizes = PrimaryButtonSizes(
+        minHeight = 56.dp,
+        borderWidth = 1.5.dp,
+        coreInset = 3.dp,
+        coreRadius = 11.dp,
+    )
+
+    val shapes: PrimaryButtonShapes
+        @Composable
+        @ReadOnlyComposable
+        get() = PrimaryButtonShapes(
+            container = NdpaTheme.shapes.lg,
+            core = RoundedCornerShape(sizes.coreRadius),
+        )
+
+    val colors: PrimaryButtonColors
+        @Composable
+        @ReadOnlyComposable
+        get() = with(NdpaTheme.colors) {
+            PrimaryButtonColors(
+                border = accent,
+                core = accent,
+                content = onAccent,
+                disabledBorder = line,
+                disabledCore = bgSunken,
+                disabledContent = textFaint,
+            )
+        }
+
+    val textStyle: TextStyle
+        @Composable
+        @ReadOnlyComposable
+        get() = NdpaTheme.typography.button
+
+    val contentPadding: PaddingValues
+        @Composable
+        @ReadOnlyComposable
+        get() = PaddingValues(
+            horizontal = NdpaTheme.spacing.x2l,
+            vertical = NdpaTheme.spacing.sm,
+        )
+}
+
+@Immutable
+internal data class PrimaryButtonSizes(
+    val minHeight: Dp,
+    val borderWidth: Dp,
+    val coreInset: Dp,
+    val coreRadius: Dp,
+)
+
+@Immutable
+internal data class PrimaryButtonShapes(
+    val container: Shape,
+    val core: Shape,
+)
 
 @Immutable
 internal data class PrimaryButtonColors(
@@ -89,35 +149,6 @@ internal data class PrimaryButtonColors(
     fun core(enabled: Boolean): Color = if (enabled) core else disabledCore
 
     fun content(enabled: Boolean): Color = if (enabled) content else disabledContent
-}
-
-internal object PrimaryButtonDefaults {
-
-    val MinHeight: Dp = 56.dp
-
-    val BorderWidth: Dp = 1.5.dp
-
-    val CoreInset: Dp = 3.dp
-
-    val CoreShape: Shape = RoundedCornerShape(11.dp)
-
-    val shape: Shape
-        @Composable
-        @ReadOnlyComposable
-        get() = NdpaTheme.shapes.lg
-
-    @Composable
-    @ReadOnlyComposable
-    fun colors(): PrimaryButtonColors = with(NdpaTheme.colors) {
-        PrimaryButtonColors(
-            border = accent,
-            core = accent,
-            content = onAccent,
-            disabledBorder = line,
-            disabledCore = bgSunken,
-            disabledContent = textFaint,
-        )
-    }
 }
 
 @Preview

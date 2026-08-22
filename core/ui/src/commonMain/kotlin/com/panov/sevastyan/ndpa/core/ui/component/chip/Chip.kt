@@ -5,15 +5,19 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -28,9 +32,13 @@ fun Chip(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val sizes = ChipDefaults.sizes
+    val shapes = ChipDefaults.shapes
+    val colors = ChipDefaults.colors
+
     Box(
         modifier = modifier
-            .heightIn(min = ChipDefaults.MinHeight)
+            .heightIn(min = sizes.minHeight)
             .clickable(
                 interactionSource = null,
                 indication = PressedIndication,
@@ -38,20 +46,17 @@ fun Chip(
                 onClick = onClick,
             )
             .border(
-                width = ChipDefaults.BorderWidth,
-                color = NdpaTheme.colors.line,
-                shape = ChipDefaults.shape,
+                width = sizes.borderWidth,
+                color = colors.border,
+                shape = shapes.container,
             )
-            .padding(
-                horizontal = NdpaTheme.spacing.xl,
-                vertical = NdpaTheme.spacing.sm,
-            ),
+            .padding(ChipDefaults.contentPadding),
         contentAlignment = Alignment.Center,
     ) {
         Text(
             text = text,
-            style = NdpaTheme.typography.button,
-            color = NdpaTheme.colors.text,
+            style = ChipDefaults.textStyle,
+            color = colors.content,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
         )
@@ -60,15 +65,58 @@ fun Chip(
 
 internal object ChipDefaults {
 
-    val MinHeight: Dp = 48.dp
+    val sizes: ChipSizes = ChipSizes(
+        minHeight = 48.dp,
+        borderWidth = 1.dp,
+    )
 
-    val BorderWidth: Dp = 1.dp
-
-    val shape: Shape
+    val shapes: ChipShapes
         @Composable
         @ReadOnlyComposable
-        get() = NdpaTheme.shapes.md
+        get() = ChipShapes(
+            container = NdpaTheme.shapes.md,
+        )
+
+    val colors: ChipColors
+        @Composable
+        @ReadOnlyComposable
+        get() = with(NdpaTheme.colors) {
+            ChipColors(
+                border = line,
+                content = text,
+            )
+        }
+
+    val textStyle: TextStyle
+        @Composable
+        @ReadOnlyComposable
+        get() = NdpaTheme.typography.button
+
+    val contentPadding: PaddingValues
+        @Composable
+        @ReadOnlyComposable
+        get() = PaddingValues(
+            horizontal = NdpaTheme.spacing.xl,
+            vertical = NdpaTheme.spacing.sm,
+        )
 }
+
+@Immutable
+internal data class ChipSizes(
+    val minHeight: Dp,
+    val borderWidth: Dp,
+)
+
+@Immutable
+internal data class ChipShapes(
+    val container: Shape,
+)
+
+@Immutable
+internal data class ChipColors(
+    val border: Color,
+    val content: Color,
+)
 
 @Preview
 @Composable
