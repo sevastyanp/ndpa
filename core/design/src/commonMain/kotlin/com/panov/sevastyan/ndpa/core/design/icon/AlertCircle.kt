@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val NdpaIcons.ShieldOff: ImageVector
+val NdpaIcons.AlertCircle: ImageVector
     get() {
-        if (_ShieldOff != null) {
-            return _ShieldOff!!
+        if (_AlertCircle != null) {
+            return _AlertCircle!!
         }
-        _ShieldOff = ImageVector.Builder(
-            name = "ShieldOff",
+        _AlertCircle = ImageVector.Builder(
+            name = "AlertCircle",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
             viewportWidth = 24f,
@@ -26,21 +26,21 @@ val NdpaIcons.ShieldOff: ImageVector
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
             ) {
-                moveTo(4.5f, 4.5f)
-                lineTo(19.5f, 19.5f)
-                moveTo(12f, 2.8f)
-                lineTo(20f, 5.8f)
-                verticalLineTo(12f)
-                curveTo(20f, 16.4f, 16.6f, 19.9f, 12f, 21.2f)
-                curveTo(7.4f, 19.9f, 4f, 16.4f, 4f, 12f)
-                verticalLineTo(5.8f)
-                lineTo(12f, 2.8f)
+                moveTo(22f, 12f)
+                curveTo(22f, 17.523f, 17.523f, 22f, 12f, 22f)
+                curveTo(6.477f, 22f, 2f, 17.523f, 2f, 12f)
+                curveTo(2f, 6.477f, 6.477f, 2f, 12f, 2f)
+                curveTo(17.523f, 2f, 22f, 6.477f, 22f, 12f)
                 close()
+                moveTo(12f, 8f)
+                lineTo(12f, 12f)
+                moveTo(12f, 16f)
+                lineTo(12f, 16.01f)
             }
         }.build()
 
-        return _ShieldOff!!
+        return _AlertCircle!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _ShieldOff: ImageVector? = null
+private var _AlertCircle: ImageVector? = null

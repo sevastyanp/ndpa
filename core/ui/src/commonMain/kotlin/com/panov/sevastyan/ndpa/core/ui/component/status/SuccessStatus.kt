@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -42,10 +41,13 @@ fun SuccessStatus(
 
     Row(
         modifier = modifier
-            .semantics(mergeDescendants = true) {}
+            .semantics(
+                mergeDescendants = true,
+                properties = { /* no-op */ },
+            )
             .heightIn(min = sizes.minHeight)
             .background(colors.container, shapes.container)
-            .padding(SuccessStatusDefaults.contentPadding),
+            .padding(NdpaTheme.spacing.lg),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(
             space = sizes.gap,
@@ -108,11 +110,6 @@ internal object SuccessStatusDefaults {
         @Composable
         @ReadOnlyComposable
         get() = NdpaTheme.typography.body.copy(fontWeight = FontWeight.Medium)
-
-    val contentPadding: PaddingValues
-        @Composable
-        @ReadOnlyComposable
-        get() = PaddingValues(NdpaTheme.spacing.lg)
 }
 
 @Immutable

@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -50,7 +49,10 @@ fun Chip(
                 color = colors.border,
                 shape = shapes.container,
             )
-            .padding(ChipDefaults.contentPadding),
+            .padding(
+                horizontal = NdpaTheme.spacing.xl,
+                vertical = NdpaTheme.spacing.sm,
+            ),
         contentAlignment = Alignment.Center,
     ) {
         Text(
@@ -91,14 +93,6 @@ internal object ChipDefaults {
         @Composable
         @ReadOnlyComposable
         get() = NdpaTheme.typography.button
-
-    val contentPadding: PaddingValues
-        @Composable
-        @ReadOnlyComposable
-        get() = PaddingValues(
-            horizontal = NdpaTheme.spacing.xl,
-            vertical = NdpaTheme.spacing.sm,
-        )
 }
 
 @Immutable
@@ -126,8 +120,8 @@ private fun ChipPreview() {
             modifier = Modifier.padding(NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
-            Chip(text = "25 min", onClick = {})
-            Chip(text = "Last time · 1 h 30 min", onClick = {})
+            Chip(text = "25 min", onClick = { /* no-op */ })
+            Chip(text = "Last time · 1 h 30 min", onClick = { /* no-op */ })
         }
     }
 }

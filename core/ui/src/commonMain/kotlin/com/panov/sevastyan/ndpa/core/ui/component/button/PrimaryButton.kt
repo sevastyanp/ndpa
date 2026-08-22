@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
@@ -66,7 +65,10 @@ fun PrimaryButton(
         )
         Text(
             text = text,
-            modifier = Modifier.padding(PrimaryButtonDefaults.contentPadding),
+            modifier = Modifier.padding(
+                horizontal = NdpaTheme.spacing.x2l,
+                vertical = NdpaTheme.spacing.sm,
+            ),
             style = PrimaryButtonDefaults.textStyle,
             color = colors.content(enabled),
             textAlign = TextAlign.Center,
@@ -111,14 +113,6 @@ internal object PrimaryButtonDefaults {
         @Composable
         @ReadOnlyComposable
         get() = NdpaTheme.typography.button
-
-    val contentPadding: PaddingValues
-        @Composable
-        @ReadOnlyComposable
-        get() = PaddingValues(
-            horizontal = NdpaTheme.spacing.x2l,
-            vertical = NdpaTheme.spacing.sm,
-        )
 }
 
 @Immutable
@@ -159,8 +153,8 @@ private fun PrimaryButtonPreview() {
             modifier = Modifier.padding(NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
-            PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth())
-            PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth(), enabled = false)
+            PrimaryButton(text = "Start focus", onClick = { /* no-op */ }, modifier = Modifier.fillMaxWidth())
+            PrimaryButton(text = "Start focus", onClick = { /* no-op */ }, modifier = Modifier.fillMaxWidth(), enabled = false)
         }
     }
 }
