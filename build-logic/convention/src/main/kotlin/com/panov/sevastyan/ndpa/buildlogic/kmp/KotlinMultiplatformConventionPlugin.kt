@@ -8,6 +8,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import com.panov.sevastyan.ndpa.buildlogic.installGitHooksBeforeKotlinCompilation
 import com.panov.sevastyan.ndpa.buildlogic.libs
 import com.panov.sevastyan.ndpa.buildlogic.versionInt
 
@@ -39,5 +40,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
                     }
             }
         }
+
+        installGitHooksBeforeKotlinCompilation()
     }
 }

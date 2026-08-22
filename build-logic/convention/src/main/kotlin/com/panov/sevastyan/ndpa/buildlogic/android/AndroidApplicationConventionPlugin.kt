@@ -13,6 +13,7 @@ import com.panov.sevastyan.ndpa.buildlogic.versionInt
 import com.panov.sevastyan.ndpa.buildlogic.library
 import com.panov.sevastyan.ndpa.buildlogic.implementation
 import com.panov.sevastyan.ndpa.buildlogic.debugImplementation
+import com.panov.sevastyan.ndpa.buildlogic.installGitHooksBeforeKotlinCompilation
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
@@ -47,5 +48,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             implementation(libs.library("compose-multiplatform-uiToolingPreview"))
             debugImplementation(libs.library("compose-multiplatform-uiTooling"))
         }
+
+        installGitHooksBeforeKotlinCompilation()
     }
 }
