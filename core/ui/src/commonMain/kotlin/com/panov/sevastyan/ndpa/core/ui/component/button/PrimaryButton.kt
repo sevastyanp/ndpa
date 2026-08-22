@@ -120,21 +120,16 @@ internal object PrimaryButtonDefaults {
     }
 }
 
-@Composable
-private fun PrimaryButtonGallery() {
-    Column(
-        modifier = Modifier.padding(NdpaTheme.spacing.x2l),
-        verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
-    ) {
-        PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth())
-        PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth(), enabled = false)
-    }
-}
-
 @Preview
 @Composable
 private fun PrimaryButtonPreview() {
     ThemedPreviews {
-        PrimaryButtonGallery()
+        Column(
+            modifier = Modifier.padding(NdpaTheme.spacing.x2l),
+            verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
+        ) {
+            PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth())
+            PrimaryButton(text = "Start focus", onClick = {}, modifier = Modifier.fillMaxWidth(), enabled = false)
+        }
     }
 }
