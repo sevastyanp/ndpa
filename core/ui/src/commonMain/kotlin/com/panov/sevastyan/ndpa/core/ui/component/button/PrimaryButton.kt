@@ -60,7 +60,7 @@ fun PrimaryButton(
         Box(
             modifier = Modifier
                 .matchParentSize()
-                .padding(all = sizes.coreInset)
+                .padding(all = 3.dp)
                 .background(
                     color = colors.core(enabled),
                     shape = shapes.core,
@@ -87,7 +87,6 @@ internal object PrimaryButtonDefaults {
     val sizes: PrimaryButtonSizes = PrimaryButtonSizes(
         minHeight = 56.dp,
         borderWidth = 1.5.dp,
-        coreInset = 3.dp,
         coreRadius = 11.dp,
     )
 
@@ -123,7 +122,6 @@ internal object PrimaryButtonDefaults {
 internal data class PrimaryButtonSizes(
     val minHeight: Dp,
     val borderWidth: Dp,
-    val coreInset: Dp,
     val coreRadius: Dp,
 )
 

@@ -53,7 +53,7 @@ fun SuccessStatus(
             .padding(all = NdpaTheme.spacing.lg),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(
-            space = sizes.gap,
+            space = 10.dp,
             alignment = Alignment.CenterHorizontally,
         ),
     ) {
@@ -89,7 +89,6 @@ internal object SuccessStatusDefaults {
         minHeight = 56.dp,
         indicator = 24.dp,
         check = 14.dp,
-        gap = 10.dp,
     )
 
     val shapes: SuccessStatusShapes
@@ -123,7 +122,6 @@ internal data class SuccessStatusSizes(
     val minHeight: Dp,
     val indicator: Dp,
     val check: Dp,
-    val gap: Dp,
 )
 
 @Immutable

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NDPA</string>
+    <string name="sheet_close">Close</string>
 </resources>
