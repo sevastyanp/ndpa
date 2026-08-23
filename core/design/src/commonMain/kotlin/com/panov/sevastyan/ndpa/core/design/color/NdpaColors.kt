@@ -27,6 +27,8 @@ data class NdpaColors(
     val accent: Color,
     /** Soft accent fill (banner). */
     val accentSoft: Color,
+    /** Muted accent fill (swipe start tint). */
+    val accentMuted: Color,
     /** Text/icon on accent fill. */
     val onAccent: Color,
     /** Post-factum success status. */
@@ -55,6 +57,7 @@ internal val LightNdpaColors = NdpaColors(
     textFaint = InkFaint,
     accent = Ember,
     accentSoft = EmberSoft,
+    accentMuted = EmberMuted,
     onAccent = White,
     ok = Moss,
     okSoft = MossSoft,
