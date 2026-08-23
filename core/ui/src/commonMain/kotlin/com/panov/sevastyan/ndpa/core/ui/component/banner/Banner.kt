@@ -43,22 +43,25 @@ fun Banner(
         modifier = modifier
             .semantics(
                 mergeDescendants = true,
-                properties = { /* no-op */ }
+                properties = { /* no-op */ },
             )
-            .background(colors.container, shapes.container)
+            .background(
+                color = colors.container,
+                shape = shapes.container,
+            )
             .border(
                 width = sizes.borderWidth,
                 color = colors.border,
                 shape = shapes.container,
             )
-            .padding(NdpaTheme.spacing.lg),
+            .padding(all = NdpaTheme.spacing.lg),
         horizontalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.md),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
-            modifier = Modifier.size(sizes.icon),
+            modifier = Modifier.size(size = sizes.icon),
             tint = colors.icon,
         )
         Text(
@@ -125,7 +128,7 @@ internal data class BannerColors(
 private fun BannerPreview() {
     ThemedPreviews {
         Column(
-            modifier = Modifier.padding(NdpaTheme.spacing.x2l),
+            modifier = Modifier.padding(all = NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
             Banner(

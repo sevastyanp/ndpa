@@ -28,12 +28,12 @@ private fun PreviewVariant(
     content: @Composable () -> Unit,
 ) {
     NdpaTheme(darkTheme = darkTheme) {
-        Column(modifier = Modifier.background(NdpaTheme.colors.bg)) {
+        Column(modifier = Modifier.background(color = NdpaTheme.colors.bg)) {
             Text(
                 text = name,
                 modifier = Modifier.padding(
                     horizontal = NdpaTheme.spacing.x2l,
-                    vertical = NdpaTheme.spacing.sm
+                    vertical = NdpaTheme.spacing.sm,
                 ),
                 style = NdpaTheme.typography.label,
                 color = NdpaTheme.colors.textMuted,

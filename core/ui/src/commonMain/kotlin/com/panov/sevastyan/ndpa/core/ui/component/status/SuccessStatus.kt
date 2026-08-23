@@ -46,8 +46,11 @@ fun SuccessStatus(
                 properties = { /* no-op */ },
             )
             .heightIn(min = sizes.minHeight)
-            .background(colors.container, shapes.container)
-            .padding(NdpaTheme.spacing.lg),
+            .background(
+                color = colors.container,
+                shape = shapes.container,
+            )
+            .padding(all = NdpaTheme.spacing.lg),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(
             space = sizes.gap,
@@ -56,14 +59,17 @@ fun SuccessStatus(
     ) {
         Box(
             modifier = Modifier
-                .size(sizes.indicator)
-                .background(colors.indicator, shapes.indicator),
+                .size(size = sizes.indicator)
+                .background(
+                    color = colors.indicator,
+                    shape = shapes.indicator,
+                ),
             contentAlignment = Alignment.Center,
         ) {
             Icon(
                 imageVector = NdpaIcons.Check,
                 contentDescription = null,
-                modifier = Modifier.size(sizes.check),
+                modifier = Modifier.size(size = sizes.check),
                 tint = colors.check,
             )
         }
@@ -139,7 +145,7 @@ internal data class SuccessStatusColors(
 private fun SuccessStatusPreview() {
     ThemedPreviews {
         Column(
-            modifier = Modifier.padding(NdpaTheme.spacing.x2l),
+            modifier = Modifier.padding(all = NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
             SuccessStatus(text = "Access granted", modifier = Modifier.fillMaxWidth())

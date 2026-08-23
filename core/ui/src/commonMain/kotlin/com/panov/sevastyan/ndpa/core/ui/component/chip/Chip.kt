@@ -117,7 +117,7 @@ internal data class ChipColors(
 private fun ChipPreview() {
     ThemedPreviews {
         Column(
-            modifier = Modifier.padding(NdpaTheme.spacing.x2l),
+            modifier = Modifier.padding(all = NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
             Chip(text = "25 min", onClick = { /* no-op */ })

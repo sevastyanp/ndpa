@@ -60,15 +60,19 @@ fun PrimaryButton(
         Box(
             modifier = Modifier
                 .matchParentSize()
-                .padding(sizes.coreInset)
-                .background(colors.core(enabled), shapes.core),
+                .padding(all = sizes.coreInset)
+                .background(
+                    color = colors.core(enabled),
+                    shape = shapes.core,
+                ),
         )
         Text(
             text = text,
-            modifier = Modifier.padding(
-                horizontal = NdpaTheme.spacing.x2l,
-                vertical = NdpaTheme.spacing.sm,
-            ),
+            modifier = Modifier
+                .padding(
+                    horizontal = NdpaTheme.spacing.x2l,
+                    vertical = NdpaTheme.spacing.sm,
+                ),
             style = PrimaryButtonDefaults.textStyle,
             color = colors.content(enabled),
             textAlign = TextAlign.Center,
@@ -150,7 +154,7 @@ internal data class PrimaryButtonColors(
 private fun PrimaryButtonPreview() {
     ThemedPreviews {
         Column(
-            modifier = Modifier.padding(NdpaTheme.spacing.x2l),
+            modifier = Modifier.padding(all = NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
             PrimaryButton(text = "Start focus", onClick = { /* no-op */ }, modifier = Modifier.fillMaxWidth())
