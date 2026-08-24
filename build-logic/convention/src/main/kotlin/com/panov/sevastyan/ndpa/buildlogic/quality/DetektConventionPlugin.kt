@@ -1,0 +1,33 @@
+package com.panov.sevastyan.ndpa.buildlogic.quality
+
+import com.panov.sevastyan.ndpa.buildlogic.detektPlugins
+import com.panov.sevastyan.ndpa.buildlogic.library
+import com.panov.sevastyan.ndpa.buildlogic.libs
+import dev.detekt.gradle.extensions.DetektExtension
+import dev.detekt.gradle.extensions.FailOnSeverity
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
+
+class DetektConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) = with(target) {
+        pluginManager.apply("dev.detekt")
+
+        val configDir = rootProject.layout.projectDirectory.dir("config/detekt")
+
+        extensions.configure<DetektExtension> {
+            source.setFrom(layout.projectDirectory.dir("src"))
+            config.setFrom(configDir.file("detekt.yml"))
+            buildUponDefaultConfig.set(true)
+            parallel.set(true)
+            failOnSeverity.set(FailOnSeverity.Warning)
+            basePath.set(rootProject.layout.projectDirectory)
+        }
+
+        dependencies {
+            detektPlugins(libs.library("detekt-rules-ktlintWrapper"))
+            detektPlugins(libs.library("detekt-rules-compose"))
+        }
+    }
+}

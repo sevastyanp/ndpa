@@ -1,0 +1,3 @@
+naming:
+  TopLevelPropertyNaming:
+    constantPattern: '([A-Z][_A-Z0-9]*)|([A-Z][A-Za-z0-9]*)'

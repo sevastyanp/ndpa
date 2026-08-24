@@ -16,6 +16,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         pluginManager.apply("org.jetbrains.kotlin.multiplatform")
         pluginManager.apply("com.android.kotlin.multiplatform.library")
+        pluginManager.apply("com.panov.sevastyan.ndpa.detekt")
 
         extensions.configure<KotlinMultiplatformExtension> {
             iosArm64()

@@ -21,6 +21,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.compose.compiler.gradlePlugin)
+    compileOnly(libs.detekt.gradlePlugin)
 }
 
 gradlePlugin {
@@ -36,6 +37,10 @@ gradlePlugin {
         register("composeMultiplatform") {
             id = "com.panov.sevastyan.ndpa.compose.multiplatform"
             implementationClass = "com.panov.sevastyan.ndpa.buildlogic.kmp.ComposeMultiplatformConventionPlugin"
+        }
+        register("detekt") {
+            id = "com.panov.sevastyan.ndpa.detekt"
+            implementationClass = "com.panov.sevastyan.ndpa.buildlogic.quality.DetektConventionPlugin"
         }
     }
 }
