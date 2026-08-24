@@ -69,34 +69,32 @@ internal fun NdpaColors.toMaterialColorScheme(darkTheme: Boolean): ColorScheme =
         onTertiaryFixedVariant = text,
     )
 
-internal fun NdpaTypography.toMaterialTypography(fontFamily: FontFamily): Typography =
-    Typography(
-        fontFamily = fontFamily,
-        displayLarge = numeral,
-        displayMedium = numeral,
-        displaySmall = numeralSmall,
-        headlineLarge = headline,
-        headlineMedium = headline,
-        headlineSmall = headline,
-        titleLarge = title,
-        titleMedium = title,
-        titleSmall = title,
-        bodyLarge = bodyLarge,
-        bodyMedium = body,
-        bodySmall = body,
-        labelLarge = button,
-        labelMedium = label,
-        labelSmall = label,
-    )
+internal fun NdpaTypography.toMaterialTypography(fontFamily: FontFamily): Typography = Typography(
+    fontFamily = fontFamily,
+    displayLarge = numeral,
+    displayMedium = numeral,
+    displaySmall = numeralSmall,
+    headlineLarge = headline,
+    headlineMedium = headline,
+    headlineSmall = headline,
+    titleLarge = title,
+    titleMedium = title,
+    titleSmall = title,
+    bodyLarge = bodyLarge,
+    bodyMedium = body,
+    bodySmall = body,
+    labelLarge = button,
+    labelMedium = label,
+    labelSmall = label,
+)
 
-internal fun NdpaShapes.toMaterialShapes(): Shapes =
-    Shapes(
-        extraSmall = sm,
-        small = sm,
-        medium = md,
-        large = lg,
-        extraLarge = xl,
-    )
+internal fun NdpaShapes.toMaterialShapes(): Shapes = Shapes(
+    extraSmall = sm,
+    small = sm,
+    medium = md,
+    large = lg,
+    extraLarge = xl,
+)
 
 internal val NdpaLightColorScheme = LightNdpaColors.toMaterialColorScheme(darkTheme = false)
 internal val NdpaDarkColorScheme = DarkNdpaColors.toMaterialColorScheme(darkTheme = true)

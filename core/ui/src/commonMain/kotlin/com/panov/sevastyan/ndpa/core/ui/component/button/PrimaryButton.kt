@@ -155,8 +155,17 @@ private fun PrimaryButtonPreview() {
             modifier = Modifier.padding(all = NdpaTheme.spacing.x2l),
             verticalArrangement = Arrangement.spacedBy(NdpaTheme.spacing.lg),
         ) {
-            PrimaryButton(text = "Start focus", onClick = { /* no-op */ }, modifier = Modifier.fillMaxWidth())
-            PrimaryButton(text = "Start focus", onClick = { /* no-op */ }, modifier = Modifier.fillMaxWidth(), enabled = false)
+            PrimaryButton(
+                text = "Start focus",
+                onClick = { /* no-op */ },
+                modifier = Modifier.fillMaxWidth(),
+            )
+            PrimaryButton(
+                text = "Start focus",
+                onClick = { /* no-op */ },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = false,
+            )
         }
     }
 }

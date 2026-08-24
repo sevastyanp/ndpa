@@ -27,7 +27,8 @@ internal object PressedIndication : IndicationNodeFactory {
 
 private class PressedIndicationNode(
     private val interactionSource: InteractionSource,
-) : Modifier.Node(), DrawModifierNode {
+) : Modifier.Node(),
+    DrawModifierNode {
 
     private val activePresses = mutableListOf<PressInteraction.Press>()
     private val layerPaint = Paint().apply { alpha = PressedAlpha }

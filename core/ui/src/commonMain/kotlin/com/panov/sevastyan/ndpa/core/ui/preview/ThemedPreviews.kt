@@ -14,8 +14,14 @@ import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
 private val VariantGap: Dp = 16.dp
 
 @Composable
-fun ThemedPreviews(content: @Composable () -> Unit) {
-    Column(verticalArrangement = Arrangement.spacedBy(VariantGap)) {
+fun ThemedPreviews(
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit,
+) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(VariantGap),
+    ) {
         PreviewVariant(name = "Light", darkTheme = false, content = content)
         PreviewVariant(name = "Dark", darkTheme = true, content = content)
     }

@@ -22,8 +22,7 @@ import com.panov.sevastyan.ndpa.core.design.spacing.NdpaSpacing
 import com.panov.sevastyan.ndpa.core.design.typography.NdpaTypography
 import com.panov.sevastyan.ndpa.core.design.typography.ndpaTypography
 
-private fun noTheme(name: String): Nothing =
-    error("No $name provided. Wrap the content in `NdpaTheme { ... }`.")
+private fun noTheme(name: String): Nothing = error("No $name provided. Wrap the content in `NdpaTheme { ... }`.")
 
 internal val LocalNdpaColors = staticCompositionLocalOf<NdpaColors> { noTheme("`NdpaColors`") }
 internal val LocalNdpaTypography = staticCompositionLocalOf<NdpaTypography> { noTheme("`NdpaTypography`") }

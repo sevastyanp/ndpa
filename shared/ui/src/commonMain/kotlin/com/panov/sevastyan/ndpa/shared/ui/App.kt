@@ -9,11 +9,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
 
 @Composable
-@Preview
-fun App() {
+fun App(modifier: Modifier = Modifier) {
     NdpaTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
+        Surface(modifier = modifier.fillMaxSize()) {
             Box(modifier = Modifier.fillMaxSize())
         }
     }
+}
+
+@Composable
+@Preview
+private fun AppPreview() {
+    App()
 }
