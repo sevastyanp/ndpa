@@ -6,6 +6,7 @@ import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
+import java.io.File
 
 private const val INSTALL_GIT_HOOKS_PATH = ":installGitHooks"
 
@@ -23,3 +24,17 @@ internal fun Project.installGitHooksBeforeKotlinCompilation() {
         dependsOn(INSTALL_GIT_HOOKS_PATH)
     }
 }
+
+internal fun Project.gitStagedKotlinFiles(): List<File> =
+    providers.exec {
+        commandLine("git", "--no-pager", "diff", "--name-only", "--cached", "--diff-filter=ACMR")
+    }.standardOutput.asText.get()
+        .lineSequence()
+        .map(String::trim)
+        .filter { filePath ->
+            filePath.endsWith(".kt") || filePath.endsWith(".kts")
+        }
+        .map { filePath ->
+            rootDir.resolve(filePath)
+        }
+        .toList()
