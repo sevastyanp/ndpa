@@ -57,8 +57,8 @@ import com.panov.sevastyan.ndpa.core.design.icon.ChevronRight
 import com.panov.sevastyan.ndpa.core.design.icon.NdpaIcons
 import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
 import com.panov.sevastyan.ndpa.core.ui.preview.ThemedPreviews
-import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 private const val ConfirmThreshold = 0.9f
 
@@ -74,7 +74,7 @@ fun SwipeToConfirm(
     hint: String,
     tintStart: Color,
     tintEnd: Color,
-    onSwiped: () -> Unit,
+    onSwipe: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val sizes = SwipeToConfirmDefaults.sizes
@@ -87,7 +87,7 @@ fun SwipeToConfirm(
 
     val scope = rememberCoroutineScope()
 
-    val currentOnSwiped by rememberUpdatedState(onSwiped)
+    val currentOnSwipe by rememberUpdatedState(onSwipe)
 
     val thumbOffset = remember { Animatable(0f) }
     var travel by remember { mutableFloatStateOf(0f) }
@@ -107,7 +107,7 @@ fun SwipeToConfirm(
             .heightIn(min = sizes.minHeight)
             .semantics(mergeDescendants = true) {
                 onLongClick(label = hint) {
-                    currentOnSwiped()
+                    currentOnSwipe()
                     true
                 }
             }
@@ -179,7 +179,7 @@ fun SwipeToConfirm(
                         scope.launch {
                             if (progress() >= ConfirmThreshold) {
                                 thumbOffset.animateTo(travel, tween(CompleteDurationMillis))
-                                currentOnSwiped()
+                                currentOnSwipe()
                             } else {
                                 thumbOffset.animateTo(0f, ReturnSpring)
                             }
@@ -334,14 +334,14 @@ private fun SwipeToConfirmPreview() {
                 hint = "Slide to end",
                 tintStart = NdpaTheme.colors.accentMuted,
                 tintEnd = NdpaTheme.colors.accent,
-                onSwiped = { /* no-op */ },
+                onSwipe = { /* no-op */ },
                 modifier = Modifier.fillMaxWidth(),
             )
             SwipeToConfirm(
                 hint = "Slide all the way to the end to finish the focus session",
                 tintStart = NdpaTheme.colors.accentMuted,
                 tintEnd = NdpaTheme.colors.accent,
-                onSwiped = { /* no-op */ },
+                onSwipe = { /* no-op */ },
                 modifier = Modifier.fillMaxWidth(),
             )
         }

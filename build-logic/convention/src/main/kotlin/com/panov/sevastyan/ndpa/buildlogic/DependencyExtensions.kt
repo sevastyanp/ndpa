@@ -11,3 +11,6 @@ internal fun DependencyHandler.debugImplementation(dependency: Any): Dependency?
 
 internal fun DependencyHandler.androidRuntimeClasspath(dependency: Any): Dependency? =
     add("androidRuntimeClasspath", dependency)
+
+internal fun DependencyHandler.detektPlugins(dependency: Any): Dependency? =
+    add("detektPlugins", dependency)

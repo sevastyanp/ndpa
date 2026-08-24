@@ -1,0 +1,39 @@
+complexity:
+  LongMethod:
+    ignoreAnnotated: ['Composable']
+
+naming:
+  TopLevelPropertyNaming:
+    constantPattern: '([A-Z][_A-Z0-9]*)|([A-Z][A-Za-z0-9]*)'
+  FunctionNaming:
+    ignoreAnnotated: ['Composable']
+    excludes: ['**/iosMain/**']
+
+style:
+  MaxLineLength:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+
+ktlint:
+  autoCorrect: false
+  BackingPropertyNaming:
+    active: false
+  PropertyName:
+    active: false
+  ClassSignature:
+    forceMultilineWhenParameterCountGreaterOrEqualThan: '1'
+  FunctionSignature:
+    forceMultilineWhenParameterCountGreaterOrEqualThan: 2
+
+Compose:
+  DefaultsVisibility:
+    active: false
+  CompositionLocalAllowlist:
+    allowedCompositionLocals:
+      - 'LocalNdpaColors'
+      - 'LocalNdpaTypography'
+      - 'LocalNdpaShapes'
+      - 'LocalNdpaSpacing'
+      - 'LocalNdpaSizes'
+      - 'LocalNdpaElevation'

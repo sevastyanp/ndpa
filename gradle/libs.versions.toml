@@ -8,6 +8,8 @@ androidx-lifecycle = "2.11.0-beta01"
 composeMultiplatform = "1.11.1"
 kotlin = "2.4.10"
 material3 = "1.11.0-alpha07"
+detekt = "2.0.0-alpha.6"
+composeRules = "0.6.4"
 
 [libraries]
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -25,9 +27,15 @@ compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref
 compose-multiplatform-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-multiplatform-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
 
+detekt-gradlePlugin = { module = "dev.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+detekt-rules-ktlintWrapper = { module = "dev.detekt:detekt-rules-ktlint-wrapper", version.ref = "detekt" }
+detekt-rules-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "composeRules" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+
+detekt = { id = "dev.detekt", version.ref = "detekt" }

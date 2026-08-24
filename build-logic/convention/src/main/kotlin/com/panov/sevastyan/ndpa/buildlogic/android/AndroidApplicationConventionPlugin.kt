@@ -19,6 +19,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         pluginManager.apply("com.android.application")
         pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
+        pluginManager.apply("com.panov.sevastyan.ndpa.detekt")
 
         extensions.configure<ApplicationExtension> {
             compileSdk = libs.versionInt("android-compileSdk")
