@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.shared.ui
+package com.panov.sevastyan.ndpa.shared
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
