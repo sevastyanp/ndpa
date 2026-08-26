@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.timer
+package com.panov.sevastyan.ndpa.core.ui.timer.component
 
 enum class TimerRingSection {
     Hours,

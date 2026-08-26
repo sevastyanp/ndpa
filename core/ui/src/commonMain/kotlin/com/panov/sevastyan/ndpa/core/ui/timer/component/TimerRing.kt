@@ -1,6 +1,6 @@
 @file:Suppress("TooManyFunctions")
 
-package com.panov.sevastyan.ndpa.core.ui.component.timer
+package com.panov.sevastyan.ndpa.core.ui.timer.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -49,8 +49,10 @@ import androidx.compose.ui.unit.dp
 import com.panov.sevastyan.ndpa.core.design.icon.Infinity
 import com.panov.sevastyan.ndpa.core.design.icon.NdpaIcons
 import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
-import com.panov.sevastyan.ndpa.core.ui.component.interaction.PressedIndication
+import com.panov.sevastyan.ndpa.core.ui.interaction.PressedIndication
 import com.panov.sevastyan.ndpa.core.ui.preview.ThemedPreviews
+import com.panov.sevastyan.ndpa.core.ui.timer.format
+import com.panov.sevastyan.ndpa.core.ui.timer.toTimerDigits
 import org.jetbrains.compose.resources.stringResource
 import kotlin.math.PI
 import kotlin.math.cos

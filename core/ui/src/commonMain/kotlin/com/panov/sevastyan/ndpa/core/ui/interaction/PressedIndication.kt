@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.interaction
+package com.panov.sevastyan.ndpa.core.ui.interaction
 
 import androidx.compose.foundation.IndicationNodeFactory
 import androidx.compose.foundation.interaction.InteractionSource

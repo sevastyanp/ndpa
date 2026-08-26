@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.banner
+package com.panov.sevastyan.ndpa.core.ui.banner.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.chip
+package com.panov.sevastyan.ndpa.core.ui.chip.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -22,7 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
-import com.panov.sevastyan.ndpa.core.ui.component.interaction.PressedIndication
+import com.panov.sevastyan.ndpa.core.ui.interaction.PressedIndication
 import com.panov.sevastyan.ndpa.core.ui.preview.ThemedPreviews
 
 @Composable

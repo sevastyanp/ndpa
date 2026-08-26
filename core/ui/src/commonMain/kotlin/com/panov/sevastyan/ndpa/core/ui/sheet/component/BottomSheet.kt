@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.sheet
+package com.panov.sevastyan.ndpa.core.ui.sheet.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -36,8 +36,8 @@ import com.panov.sevastyan.ndpa.core.design.icon.NdpaIcons
 import com.panov.sevastyan.ndpa.core.design.theme.NdpaTheme
 import com.panov.sevastyan.ndpa.core.strings.generated.resources.Res
 import com.panov.sevastyan.ndpa.core.strings.generated.resources.sheet_close
-import com.panov.sevastyan.ndpa.core.ui.component.button.PrimaryButton
-import com.panov.sevastyan.ndpa.core.ui.component.interaction.PressedIndication
+import com.panov.sevastyan.ndpa.core.ui.button.component.PrimaryButton
+import com.panov.sevastyan.ndpa.core.ui.interaction.PressedIndication
 import com.panov.sevastyan.ndpa.core.ui.preview.ThemedPreviews
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
