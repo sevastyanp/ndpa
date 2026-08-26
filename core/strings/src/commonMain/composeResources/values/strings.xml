@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NDPA</string>
     <string name="sheet_close">Close</string>
+    <string name="timer_caption_remaining">remaining</string>
+    <string name="timer_caption_in_focus">in focus</string>
+    <string name="timer_switch_to_timed">Set a timer</string>
+    <string name="timer_switch_to_untimed">Run without a timer</string>
 </resources>

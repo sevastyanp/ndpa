@@ -1,3 +1,7 @@
 <resources>
     <string name="sheet_close">Закрыть</string>
+    <string name="timer_caption_remaining">осталось</string>
+    <string name="timer_caption_in_focus">в фокусе</string>
+    <string name="timer_switch_to_timed">Установить таймер</string>
+    <string name="timer_switch_to_untimed">Запустить без таймера</string>
 </resources>
