@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.timer
+package com.panov.sevastyan.ndpa.core.ui.timer.component
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.vector.ImageVector

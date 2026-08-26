@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.status
+package com.panov.sevastyan.ndpa.core.ui.status.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

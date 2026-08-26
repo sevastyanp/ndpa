@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.swipe
+package com.panov.sevastyan.ndpa.core.ui.swipe.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring

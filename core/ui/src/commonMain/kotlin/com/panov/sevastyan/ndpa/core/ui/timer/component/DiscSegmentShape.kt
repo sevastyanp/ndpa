@@ -1,4 +1,4 @@
-package com.panov.sevastyan.ndpa.core.ui.component.timer
+package com.panov.sevastyan.ndpa.core.ui.timer.component
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
