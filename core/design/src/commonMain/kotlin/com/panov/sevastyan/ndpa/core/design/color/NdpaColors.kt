@@ -35,14 +35,18 @@ data class NdpaColors(
     val ok: Color,
     /** Success status surface. */
     val okSoft: Color,
+    /** Alert status. */
+    val alert: Color,
+    /** Alert status surface. */
+    val alertSoft: Color,
+    /** Running meeting card fill. */
+    val cardRunning: Color,
+    /** Upcoming meeting card fill. */
+    val cardUpcoming: Color,
+    /** Free meeting card fill. */
+    val cardFree: Color,
     /** Scrim under sheets. */
     val scrim: Color,
-    /** Digits and ∞ inside the timer ring. */
-    val dial: Color,
-    /** Captions inside the ring, mode toggle icon. */
-    val dialMuted: Color,
-    /** Inactive digit groups inside the ring. */
-    val dialFaint: Color,
 )
 
 internal val LightNdpaColors = NdpaColors(
@@ -61,10 +65,12 @@ internal val LightNdpaColors = NdpaColors(
     onAccent = White,
     ok = Moss,
     okSoft = MossSoft,
+    alert = Alert,
+    alertSoft = AlertSoft,
+    cardRunning = CardRunning,
+    cardUpcoming = CardUpcoming,
+    cardFree = CardFree,
     scrim = Scrim,
-    dial = Dial,
-    dialMuted = DialMuted,
-    dialFaint = DialFaint,
 )
 
 // TODO(dark-theme): the dark theme is not designed yet. Until it is, dark is a
