@@ -8,13 +8,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val NdpaIcons.BellOff: ImageVector
+val NdpaIcons.Shield: ImageVector
     get() {
-        if (_BellOff != null) {
-            return _BellOff!!
+        if (_Shield != null) {
+            return _Shield!!
         }
-        _BellOff = ImageVector.Builder(
-            name = "BellOff",
+        _Shield = ImageVector.Builder(
+            name = "Shield",
             defaultWidth = 24.dp,
             defaultHeight = 24.dp,
             viewportWidth = 24f,
@@ -26,22 +26,19 @@ val NdpaIcons.BellOff: ImageVector
                 strokeLineCap = StrokeCap.Round,
                 strokeLineJoin = StrokeJoin.Round,
             ) {
-                moveTo(6.6f, 17.4f)
-                verticalLineTo(11f)
-                curveTo(6.6f, 8.02f, 9.02f, 5.6f, 12f, 5.6f)
-                curveTo(14.98f, 5.6f, 17.4f, 8.02f, 17.4f, 11f)
-                verticalLineTo(17.4f)
-                moveTo(4.4f, 17.4f)
-                horizontalLineTo(19.6f)
-                moveTo(10f, 20.2f)
-                horizontalLineTo(14f)
-                moveTo(4.5f, 4.5f)
-                lineTo(19.5f, 19.5f)
+                moveTo(12f, 3.5f)
+                lineTo(19f, 6.5f)
+                verticalLineTo(11.5f)
+                curveTo(19f, 15.8f, 16.1f, 19.1f, 12f, 20.5f)
+                curveTo(7.9f, 19.1f, 5f, 15.8f, 5f, 11.5f)
+                verticalLineTo(6.5f)
+                lineTo(12f, 3.5f)
+                close()
             }
         }.build()
 
-        return _BellOff!!
+        return _Shield!!
     }
 
 @Suppress("ObjectPropertyName")
-private var _BellOff: ImageVector? = null
+private var _Shield: ImageVector? = null
